@@ -21,13 +21,13 @@ let handler = async (m, { conn, command, text, usedPrefix, participants }) => {
     const userCharacterSeletion =
       userChar[Math.floor(Math.random() * userChar.length)]
 
-    let message = `*${userCharacterSeletion}*`
+    let message = `${userCharacterSeletion}`
     
     conn.sendMessage(m.chat, { text: message, mentions: [mentionedUser] }, { quoted: m })
     
 }
 handler.help = ["character @tag"]
 handler.tags = ['fun']
-handler.command = /^(كت|كتابه|كتابة)/i
-
+handler.customPrefix = /^(كت|كتابه|كتابة)/i
+handler.command = new RegExp
 export default handler 
